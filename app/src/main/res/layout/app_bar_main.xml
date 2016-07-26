@@ -1,0 +1,70 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:fitsSystemWindows="true">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/main_collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            android:fitsSystemWindows="true"
+            app:expandedTitleGravity="center_horizontal|top"
+            app:contentScrim="?attr/colorPrimary"
+            >
+
+            <RelativeLayout
+                android:id="@+id/nav_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-25dp">
+
+                <com.q42.android.scrollingimageview.ScrollingImageView
+                    android:id="@+id/scrolling_clouds"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    scrolling_image_view:speed=".25dp"
+                    scrolling_image_view:src="@drawable/background_scroll" />
+
+                <com.q42.android.scrollingimageview.ScrollingImageView
+                    android:id="@+id/scrolling_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    scrolling_image_view:speed=".5dp"
+                    scrolling_image_view:src="@drawable/foreground_scroll" />
+                <com.q42.android.scrollingimageview.ScrollingImageView
+                    android:id="@+id/scrolling_brick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    scrolling_image_view:speed=".15dp"
+                    scrolling_image_view:src="@drawable/background_brick" />
+
+        </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main"/>
+
+</android.support.design.widget.CoordinatorLayout>
